@@ -1,0 +1,30 @@
+# CẦN GIẢI HỆ PHOWNG TRÌNH TUYẾN TÍNH, Ax=b
+i=1
+educ=mean(educ)
+age=mean(age)
+kidslt6=mean(kidslt6)
+nwifeinc=mean(nwifeinc)
+exper=mean(exper)
+
+# Tính véc tư b
+b1=-(i*free_b1[1]+educ*free_b1[2]+age*free_b1[3]+kidslt6*free_b1[3]+nwifeinc*free_b1[4])
+
+b1
+b2=-(i*free_b2[1]+educ*free_b2[2]+exper*free_b2[3]+exper^2*free_b2[4])
+b2
+b=cbind(b1,b2)
+print('Véc tơ b')
+b
+
+#  Xây dựng ma trận A
+
+c1=c(1,-free_b2[1])
+c1
+c2=c(-free_b1[1],1)
+c2
+A=cbind(c1,c2)
+print('Ma trận A')
+A
+# Giải hệ phowng trình
+output=solve(A,t(b))
+output
